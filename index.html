@@ -3,132 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optimized Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(45deg, #6b8eff, #9f8cff);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        .dots {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-top: 1rem;
-        }
-        .complete {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-top: 1rem;
-            display: none;
-            color: #00ff00;
-        }
-        .code {
-            font-size: 2rem;
-            color: #ffcc00;
-            margin-top: 1rem;
-            display: none;
-        }
-        .warning {
-            font-size: 1.5rem;
-            color: #ff6961;
-            margin-top: 0.5rem;
-            display: none;
-        }
-        button {
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
-            background: #ff6961;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            display: none;
-        }
-        button:hover {
-            background: #ff4d4d;
-        }
-        #camera {
-            display: none;
-            margin-top: 20px;
-            width: 80%;
-            max-width: 400px;
-            border: 2px solid #fff;
-            border-radius: 10px;
-        }
-    </style>
+    <title>by.dolpbt</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>by dolpbt DarkNet перекидываем ваши данные Разработчику 
-                                 Разработчик будет распространять ваши данные</h1>
-    <div class="dots">.</div>
-    <div class="complete">Будьте осторожны на просторах интернета😉</div>
-    <div class="code">Ваш код: <span id="randomCode"></span></div>
-    <div class="warning">писать код В ТГ @Dolpbt</div>
-    <button id="redirectButton" onclick="redirectToDarkPage()">нажми чтобы стереть следы это обязательно для вашей безопасности</button>
-    <button id="cameraButton" style="display: none;" onclick="startCamera()">КНОПКА ВАШИХ ДАННЫХ</button>
-    <video id="camera" autoplay></video>
+    <video autoplay loop muted id="background-video">
+        <source src="background.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видеофон.
+    </video>
 
-    <script>
-        let dots = document.querySelector('.dots');
-        let complete = document.querySelector('.complete');
-        let code = document.querySelector('.code');
-        let warning = document.querySelector('.warning');
-        let redirectButton = document.getElementById('redirectButton');
-        let cameraButton = document.getElementById('cameraButton');
-        let camera = document.getElementById('camera');
-        let dotCount = 1;
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">💲</div>
+        <div class="snowflake">💲</div>
+        <div class="snowflake">💲</div>
+        <div class="snowflake">💲</div>
+        <div class="snowflake">💲</div>
+        <div class="snowflake">💲</div>
+        <div class="snowflake">💲</div>
+        <div class="snowflake">💲</div>
+        <div class="snowflake">💲</div>
+        <div class="snowflake">💲</div>
+        <div class="snowflake">💲</div>
+        <div class="snowflake">💲</div>
+    </div>
 
-        // Генерация случайного кода
-        function generateRandomCode() {
-            return Math.floor(10000 + Math.random() * 90000);
-        }
-        document.getElementById("randomCode").innerText = generateRandomCode();
-
-        // Анимация точек
-        let interval = setInterval(() => {
-            dotCount = (dotCount % 3) + 1; // Счётчик от 1 до 3
-            dots.textContent = '.'.repeat(dotCount); // Меняем текст
-        }, 500); // Интервал обновления (500 мс)
-
-        // Завершение анимации через 5 секунд
-        setTimeout(() => {
-            clearInterval(interval); // Остановить анимацию
-            dots.style.display = 'none'; // Скрыть точки
-            complete.style.display = 'block'; // Показать "Будьте осторожны на просторах интернета😉"
-            code.style.display = 'block'; // Показать код
-            warning.style.display = 'block'; // Показать предупреждение
-            redirectButton.style.display = 'block'; // Показать кнопку
-        }, 5000);
-
-        // Перенаправление на чёрный экран
-        function redirectToDarkPage() {
-            window.location.href = "https://www.darkweb.dk/";
-        }
-
-        // Доступ к камере
-        function startCamera() {
-            camera.style.display = 'block';
-            navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } })
-                .then((stream) => {
-                    camera.srcObject = stream;
-                })
-                .catch((error) => {
-                    alert("Не удалось получить доступ к камере: " + error.message);
-                });
-        }
-    </script>
+    <header>
+        <h1>by.dolpbt</h1>
+        <p class="greeting">МОИИИ СОЦ СЕТИ БЭЛЕ</p>
+        <div class="social-links">
+            <a href="https://t.me/dlpbt" target="_blank">Telegram</a>
+            <a href="https://www.tiktok.com/@dolpbt" target="_blank">TikTok</a>
+        </div>
+    </header>
 </body>
 </html>
